@@ -1,12 +1,21 @@
+[controller]
+ubuntu-c ansible_connection=local
+
+[ubuntu_bionic]
 ubuntu-1 ansible_host=192.168.33.10
+ubuntu-1 ansible_user=root
 ubuntu-2 ansible_host=192.168.33.11
+ubuntu-2 ansible_user=root
 ubuntu-3 ansible_host=192.168.33.12
+ubuntu-3 ansible_user=root
 
+[centos_7]
 centos-1 ansible_host=192.168.33.20
+centos-1 ansible_user=vagrant
 centos-2 ansible_host=192.168.33.21
+centos-2 ansible_user=vagrant
 centos-3 ansible_host=192.168.33.22
-
-ubuntu-c ansible_host=192.168.33.30
+centos-3 ansible_user=root
 
 [all:vars]
 ansible_ssh_private_key_file=.vagrant/machines/{{ inventory_hostname }}/virtualbox/private_key

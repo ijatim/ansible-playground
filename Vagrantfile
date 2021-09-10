@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
           v.name = name
           v.customize ["modifyvm", :id, "--memory", 256, "--cpus", 1, "--cpuexecutioncap", "50"]
       machine.vm.synced_folder "data/", "/vagrant"
-      machine.vm.provision "shell", inline: "apt update && apt install sshpass -y"
+      machine.vm.provision "shell", inline: "apt update && apt install sshpass -y && pip3 install virtualenv"
       machine.vm.provision "file", source: "/home/hamed/.ssh/id_rsa.pub", destination: "/home/vagrant/.ssh/hamed-ubuntu.pub"
       machine.vm.provision "shell", inline: "cat /home/vagrant/.ssh/hamed-ubuntu.pub >> /home/vagrant/.ssh/authorized_keys"
       end
