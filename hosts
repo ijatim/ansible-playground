@@ -1,0 +1,12 @@
+ubuntu-1 ansible_host=192.168.33.10
+ubuntu-2 ansible_host=192.168.33.11
+ubuntu-3 ansible_host=192.168.33.12
+
+centos-1 ansible_host=192.168.33.20
+centos-2 ansible_host=192.168.33.21
+centos-3 ansible_host=192.168.33.22
+
+ubuntu-c ansible_host=192.168.33.30
+
+[all:vars]
+ansible_ssh_private_key_file=.vagrant/machines/{{ inventory_hostname }}/virtualbox/private_key
